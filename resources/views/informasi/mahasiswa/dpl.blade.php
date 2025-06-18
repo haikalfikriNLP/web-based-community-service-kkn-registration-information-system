@@ -85,7 +85,7 @@
                                             </div>
                                             <a href="https://wa.me/{{ $dpl->nomer_whatsapp }}" class="btn btn-primary btn-rounded btn-lg mt-4 text-white">
                                                 Kirim Pesan Whatsapp
-                                              </a>
+                                            </a>
                                         </div>
                                     </div>
                                 @else

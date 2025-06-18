@@ -9,13 +9,11 @@
             let namaKelompok = $("#namaKelompok").val();
             let dplId = $("#namaDosen").val();
             let lokasi = $("#lokasi").val();
-            let mahasiswaFK = $("#mahasiswaFK").val();
-            let mahasiswaFKG = $("#mahasiswaFKG").val();
-            let mahasiswaFH = $("#mahasiswaFH").val();
-            let mahasiswaFEB = $("#mahasiswaFEB").val();
-            let mahasiswaFTI = $("#mahasiswaFTI").val();
-            let mahasiswaPsikologi = $("#mahasiswaPsikologi").val();
-
+            let mahasiswaEkonomi= $("#mahasiswaEkonomi").val();
+            let mahasiswaHukum= $("#mahasiswaHukum").val();
+            let mahasiswaKeguruandanIlmupendidikan= $("#mahasiswaKeguruandanIlmuPendidikan").val();
+            let mahasiswaPertanian= $("#mahasiswaPertanian").val();
+            let mahasiswaTeknik= $("#mahasiswaTeknik").val();
 
             if (namaKelompok === "") {
                 $("#helpNamaKelompok")
@@ -64,8 +62,8 @@
                     .removeClass("is-safe")
                     .addClass("is-danger");
             }
-            validasi = mahasiswaFK.length + mahasiswaFKG.length + mahasiswaFEB.length + mahasiswaFH.length + mahasiswaFTI
-                .length + mahasiswaPsikologi.length;
+            validasi = mahasiswaEkonomi.length + mahasiswaHukum.length + mahasiswaKeguruandanIlmuPendidikan.length 
+            + mahasiswaPertanian.length + mahasiswaTeknik.length;
             if (validasi <= 0) {
                 Swal.fire({
                     icon: "error",
@@ -88,14 +86,14 @@
                 success: function(response) {
                     let kelompok_kkn_id = response.kelompok_kkn_id;
 
-                    for (let i = 0; i < mahasiswaFK.length; i++) {
+                    for (let i = 0; i < mahasiswaEkonomi.length; i++) {
                         $.ajax({
                             type: "POST",
                             url: "{{ route('add.mahasiswa.to.kelompok') }}",
                             data: {
                                 _token: "{{ csrf_token() }}",
                                 kelompok_kkn_id: kelompok_kkn_id,
-                                mahasiswa_id: mahasiswaFK[i],
+                                mahasiswa_id: mahasiswaEkonomi[i],
                             },
                             success: function(response) {
                                 console.log("Mahasiswa berhasil dibuat");
@@ -103,14 +101,14 @@
                         });
                     }
 
-                    for (let i = 0; i < mahasiswaFKG.length; i++) {
+                    for (let i = 0; i < mahasiswaHukum.length; i++) {
                         $.ajax({
                             type: "POST",
                             url: "{{ route('add.mahasiswa.to.kelompok') }}",
                             data: {
                                 _token: "{{ csrf_token() }}",
                                 kelompok_kkn_id: kelompok_kkn_id,
-                                mahasiswa_id: mahasiswaFKG[i],
+                                mahasiswa_id: mahasiswaHukum[i],
                             },
                             success: function(response) {
                                 console.log("Mahasiswa berhasil dibuat");
@@ -118,14 +116,14 @@
                         });
                     }
 
-                    for (let i = 0; i < mahasiswaFH.length; i++) {
+                    for (let i = 0; i < mahasiswaKeguruandanIlmupendidikan.length; i++) {
                         $.ajax({
                             type: "POST",
                             url: "{{ route('add.mahasiswa.to.kelompok') }}",
                             data: {
                                 _token: "{{ csrf_token() }}",
                                 kelompok_kkn_id: kelompok_kkn_id,
-                                mahasiswa_id: mahasiswaFH[i],
+                                mahasiswa_id: mahasiswaKeguruandanIlmuPendidikan[i],
                             },
                             success: function(response) {
                                 console.log("Mahasiswa berhasil dibuat");
@@ -133,14 +131,14 @@
                         });
                     }
 
-                    for (let i = 0; i < mahasiswaFEB.length; i++) {
+                    for (let i = 0; i < mahasiswaPertanian.length; i++) {
                         $.ajax({
                             type: "POST",
                             url: "{{ route('add.mahasiswa.to.kelompok') }}",
                             data: {
                                 _token: "{{ csrf_token() }}",
                                 kelompok_kkn_id: kelompok_kkn_id,
-                                mahasiswa_id: mahasiswaFEB[i],
+                                mahasiswa_id: mahasiswaPertanian[i],
                             },
                             success: function(response) {
                                 console.log("Mahasiswa berhasil dibuat");
@@ -148,14 +146,14 @@
                         });
                     }
 
-                    for (let i = 0; i < mahasiswaFTI.length; i++) {
+                    for (let i = 0; i < mahasiswaTeknik.length; i++) {
                         $.ajax({
                             type: "POST",
                             url: "{{ route('add.mahasiswa.to.kelompok') }}",
                             data: {
                                 _token: "{{ csrf_token() }}",
                                 kelompok_kkn_id: kelompok_kkn_id,
-                                mahasiswa_id: mahasiswaFTI[i],
+                                mahasiswa_id: mahasiswaTeknik[i],
                             },
                             success: function(response) {
                                 console.log("Mahasiswa berhasil dibuat");
@@ -163,20 +161,6 @@
                         });
                     }
 
-                    for (let i = 0; i < mahasiswaPsikologi.length; i++) {
-                        $.ajax({
-                            type: "POST",
-                            url: "{{ route('add.mahasiswa.to.kelompok') }}",
-                            data: {
-                                _token: "{{ csrf_token() }}",
-                                kelompok_kkn_id: kelompok_kkn_id,
-                                mahasiswa_id: mahasiswaPsikologi[i],
-                            },
-                            success: function(response) {
-                                console.log("Mahasiswa berhasil dibuat");
-                            },
-                        });
-                    }
                 },
                 error: function(xhr) {
                     console.error("Error:", xhr.responseText);
@@ -314,42 +298,12 @@
                                 <div class="item border-bottom py-3">
                                     <div class="row justify-content-start align-items-center">
                                         <div class="col-md-6">
-                                            <label for="mahasiswaFK" class="form-label"><strong>Mahasiswa
-                                                    FK</strong></label>
-                                            <select class="form-control" id="mahasiswaFK" name="mahasiswaFK" multiple
-                                                size="6" style="height: 120px;">
-                                                @foreach ($mahasiswaFK as $mahasiswa)
-                                                    <option value={{ $mahasiswa->id }}>
-                                                        {{ $mahasiswa->nama_lengkap }} - {{ $mahasiswa->npm }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="mahasiswaFKG" class="form-label"><strong>Mahasiswa
-                                                    FKG</strong></label>
-                                            <select class="form-control" id="mahasiswaFKG" name="mahasiswaFKG" multiple
-                                                size="6" style="height: 120px;">
-
-                                                @foreach ($mahasiswaFKG as $mahasiswa)
-                                                    <option value={{ $mahasiswa->id }}>
-                                                        {{ $mahasiswa->nama_lengkap }} - {{ $mahasiswa->npm }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="item border-bottom py-3">
-                                    <div class="row justify-content-start align-items-center">
-                                        <div class="col-md-6">
-                                            <label for="mahasiswaFH" class="form-label"><strong>Mahasiswa
-                                                    FH</strong></label>
-                                            <select class="form-control" id="mahasiswaFH" name="mahasiswaFH" multiple
+                                            <label for="mahasiswaHukum" class="form-label"><strong>Mahasiswa
+                                                    Hukum</strong></label>
+                                            <select class="form-control" id="mahasiswaHukum" name="mahasiswaHukum" multiple
                                                 size="6" style="height: 50px;">
 
-                                                @foreach ($mahasiswaFH as $mahasiswa)
+                                                @foreach ($mahasiswaHukum as $mahasiswa)
                                                     <option value={{ $mahasiswa->id }}>
                                                         {{ $mahasiswa->nama_lengkap }} - {{ $mahasiswa->npm }}
                                                     </option>
@@ -357,30 +311,25 @@
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="mahasiswaFEB" class="form-label"><strong>Mahasiswa
-                                                    FEB</strong></label>
-                                            <select class="form-control" id="mahasiswaFEB" name="mahasiswaFEB"
+                                            <label for="mahasiswaEkonomi" class="form-label"><strong>Mahasiswa
+                                                    Ekonomi</strong></label>
+                                            <select class="form-control" id="mahasiswaEkonomi" name="mahasiswaEkonomi"
                                                 multiple size="6" style="height: 50px;">
 
-                                                @foreach ($mahasiswaFEB as $mahasiswa)
+                                                @foreach ($mahasiswaEkonomi as $mahasiswa)
                                                     <option value={{ $mahasiswa->id }}>
                                                         {{ $mahasiswa->nama_lengkap }} - {{ $mahasiswa->npm }}
                                                     </option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="item border-bottom py-3">
-                                    <div class="row justify-content-start align-items-center">
                                         <div class="col-md-6">
-                                            <label for="mahasiswaFTI" class="form-label"><strong>Mahasiswa
-                                                    FTI</strong></label>
-                                            <select class="form-control" id="mahasiswaFTI" name="mahasiswaFTI"
+                                            <label for="mahasiswaKeguruandanIlmuPendidikan" class="form-label"><strong>Mahasiswa
+                                                    KeguruandanIlmuPendidikan</strong></label>
+                                            <select class="form-control" id="mahasiswaKeguruandanIlmuPendidikan" name="mahasiswaKeguruandanIlmuPendidikan"
                                                 multiple size="6" style="height: 50px;">
 
-                                                @foreach ($mahasiswaFTI as $mahasiswa)
+                                                @foreach ($mahasiswaKeguruandanIlmuPendidikan as $mahasiswa)
                                                     <option value={{ $mahasiswa->id }}>
                                                         {{ $mahasiswa->nama_lengkap }} - {{ $mahasiswa->npm }}
                                                     </option>
@@ -388,18 +337,32 @@
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="mahasiswaPsikologi" class="form-label"><strong>Mahasiswa
-                                                    Psikologi</strong></label>
-                                            <select class="form-control" id="mahasiswaPsikologi"
-                                                name="mahasiswaPsikologi" multiple size="6"
+                                            <label for="mahasiswaPertanian" class="form-label"><strong>Mahasiswa
+                                                    Pertanian</strong></label>
+                                            <select class="form-control" id="mahasiswaPertanian"
+                                                name="mahasiswaPertanian" multiple size="6"
                                                 style="height: 50px;">
 
-                                                @foreach ($mahasiswaPsikologi as $mahasiswa)
+                                                @foreach ($mahasiswaPertanian as $mahasiswa)
                                                     <option value={{ $mahasiswa->id }}>
                                                         {{ $mahasiswa->nama_lengkap }} - {{ $mahasiswa->npm }}
                                                     </option>
                                                 @endforeach
                                             </select>
+                                            <div class="col-md-6">
+                                            <label for="mahasiswaTeknik" class="form-label"><strong>Mahasiswa
+                                                    Teknik</strong></label>
+                                            <select class="form-control" id="mahasiswaTeknik"
+                                                name="mahasiswaTeknik" multiple size="6"
+                                                style="height: 50px;">
+
+                                                @foreach ($mahasiswaTeknik as $mahasiswa)
+                                                    <option value={{ $mahasiswa->id }}>
+                                                        {{ $mahasiswa->nama_lengkap }} - {{ $mahasiswa->npm }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

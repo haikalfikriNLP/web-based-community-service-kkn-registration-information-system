@@ -142,24 +142,21 @@
                                         <label for="fakultas" class="form-label"><strong>Fakultas</strong></label>
                                         <select class="form-control" id="fakultas" name="fakultas">
                                             <option disabled selected>Pilih Fakultas</option>
-                                            <option value="Fakultas Kedokteran"
-                                                {{ $mahasiswa->fakultas == 'Fakultas Kedokteran' ? 'selected' : '' }}>
-                                                Fakultas Kedokteran</option>
-                                            <option value="Fakultas Kedokteran Gigi"
-                                                {{ $mahasiswa->fakultas == 'Fakultas Kedokteran Gigi' ? 'selected' : '' }}>
-                                                Fakultas Kedokteran Gigi</option>
-                                            <option value="Fakultas Psikologi"
-                                                {{ $mahasiswa->fakultas == 'Fakultas Psikologi' ? 'selected' : '' }}>
-                                                Fakultas Psikologi</option>
                                             <option value="Fakultas Ekonomi"
                                                 {{ $mahasiswa->fakultas == 'Fakultas Ekonomi' ? 'selected' : '' }}>
                                                 Fakultas Ekonomi</option>
-                                            <option value="Fakultas Teknologi Informasi"
-                                                {{ $mahasiswa->fakultas == 'Fakultas Teknologi Informasi' ? 'selected' : '' }}>
-                                                Fakultas Teknologi Informasi</option>
                                             <option value="Fakultas Hukum"
                                                 {{ $mahasiswa->fakultas == 'Fakultas Hukum' ? 'selected' : '' }}>
                                                 Fakultas Hukum</option>
+                                            <option value="Fakultas Keguruan dan Ilmu Pendidikan"
+                                                {{ $mahasiswa->fakultas == 'Fakultas Keguruan dan Ilmu Pendidikan' ? 'selected' : '' }}>
+                                                Fakultas Keguruan dan Ilmu Pendidikan</option>
+                                            <option value="Fakultas Pertanian"
+                                                {{ $mahasiswa->fakultas == 'Fakultas Pertanian' ? 'selected' : '' }}>
+                                                Fakultas Pertanian</option>
+                                            <option value="Fakultas Teknik"
+                                                {{ $mahasiswa->fakultas == 'Fakultas Teknologi Informasi' ? 'selected' : '' }}>
+                                                Fakultas Teknik</option>
                                         </select>
                                     </div>
                                     <!-- Kolom Kanan -->
@@ -167,30 +164,20 @@
                                         <label for="prodi" class="form-label"><strong>Prodi</strong></label>
                                         <select class="form-control" id="prodi" name="prodi">
                                             <option disabled selected>Pilih Program Studi</option>
-                                            <option value="Prodi Kedokteran"
-                                                {{ $mahasiswa->prodi == 'Prodi Kedokteran' ? 'selected' : '' }}>Prodi
-                                                Kedokteran</option>
-                                            <option value="Prodi Kedokteran Gigi"
-                                                {{ $mahasiswa->prodi == 'Prodi Kedokteran Gigi' ? 'selected' : '' }}>
-                                                Prodi Kedokteran Gigi</option>
-                                            <option value="Prodi Psikologi"
-                                                {{ $mahasiswa->prodi == 'Prodi Psikologi' ? 'selected' : '' }}>Prodi
-                                                Psikologi</option>
-                                            <option value="Prodi Akutansi"
-                                                {{ $mahasiswa->prodi == 'Prodi Akutansi' ? 'selected' : '' }}>Prodi
-                                                Akutansi</option>
-                                            <option value="Prodi Manajemen"
-                                                {{ $mahasiswa->prodi == 'Prodi Manajemen' ? 'selected' : '' }}>Prodi
-                                                Manajemen</option>
-                                            <option value="Prodi Teknik Informatika"
-                                                {{ $mahasiswa->prodi == 'Prodi Teknik Informatika' ? 'selected' : '' }}>
-                                                Prodi Teknik Informatika</option>
-                                            <option value="Prodi Perpustakaan Sains Informasi"
-                                                {{ $mahasiswa->prodi == 'Prodi Perpustakaan Sains Informasi' ? 'selected' : '' }}>
-                                                Prodi Perpustakaan Sains Informasi</option>
-                                            <option value="Prodi Hukum"
-                                                {{ $mahasiswa->prodi == 'Prodi Hukum' ? 'selected' : '' }}>Prodi Hukum
-                                            </option>
+                                            <option value="Ekonomi Pembangunan" {{ $mahasiswa->prodi == 'Ekonomi Pembangunan' ? 'selected' : '' }}>Ekonomi Pembangunan</option>
+                                            <option value="Manajemen" {{ $mahasiswa->prodi == 'Manajemen' ? 'selected' : '' }}>Manajemen</option>
+                                            <option value="Ilmu Hukum" {{ $mahasiswa->prodi == 'Ilmu Hukum' ? 'selected' : '' }}>Ilmu Hukum</option>
+                                            <option value="Pendidikan Bahasa Indonesia" {{ $mahasiswa->prodi == 'Pendidikan Bahasa Indonesia' ? 'selected' : '' }}>Pendidikan Bahasa Indonesia</option>
+                                            <option value="Pendidikan Bahasa Inggris" {{ $mahasiswa->prodi == 'Pendidikan Bahasa Inggris' ? 'selected' : '' }}>Pendidikan Bahasa Inggris</option>
+                                            <option value="Pendidikan Ekonomi" {{ $mahasiswa->prodi == 'Pendidikan Ekonomi' ? 'selected' : '' }}>Pendidikan Ekonomi</option>
+                                            <option value="Pendidikan Matematika" {{ $mahasiswa->prodi == 'Pendidikan Matematika' ? 'selected' : '' }}>Pendidikan Matematika</option>
+                                            <option value="Pendidikan Sejarah" {{ $mahasiswa->prodi == 'Pendidikan Sejarah' ? 'selected' : '' }}>Pendidikan Sejarah</option>
+                                            <option value="Agribisnis" {{ $mahasiswa->prodi == 'Agribisnis' ? 'selected' : '' }}>Agribisnis</option>
+                                            <option value="Agroteknologi" {{ $mahasiswa->prodi == 'Agroteknologi' ? 'selected' : '' }}>Agroteknologi</option>
+                                            <option value="Budidaya Perairan" {{ $mahasiswa->prodi == 'Budidaya Perairan' ? 'selected' : '' }}>Budidaya Perairan</option>
+                                            <option value="Teknik Listrik" {{ $mahasiswa->prodi == 'Teknik Listrik' ? 'selected' : '' }}>Teknik Listrik</option>
+                                            <option value="Teknik Lingkungan" {{ $mahasiswa->prodi == 'Teknik Lingkungan' ? 'selected' : '' }}>Teknik Lingkungan</option>
+                                            <option value="Teknik Sipil" {{ $mahasiswa->prodi == 'Teknik Sipil' ? 'selected' : '' }}>Teknik Sipil</option>
                                         </select>
                                     </div>
                                 </div>

@@ -229,24 +229,18 @@
                                                     class="form-label"><strong>Fakultas</strong></label>
                                                 <select class="form-control" id="fakultas" name="fakultas">
                                                     <option disabled selected>Pilih Fakultas</option>
-                                                    <option value="Fakultas Kedokteran"
-                                                        {{ $user->getTableDatabase()->fakultas == 'Fakultas Kedokteran' ? 'selected' : '' }}>
-                                                        Fakultas Kedokteran</option>
-                                                    <option value="Fakultas Kedokteran Gigi"
-                                                        {{ $user->getTableDatabase()->fakultas == 'Fakultas Kedokteran Gigi' ? 'selected' : '' }}>
-                                                        Fakultas Kedokteran Gigi</option>
-                                                    <option value="Fakultas Psikologi"
-                                                        {{ $user->getTableDatabase()->fakultas == 'Fakultas Psikologi' ? 'selected' : '' }}>
-                                                        Fakultas Psikologi</option>
-                                                    <option value="Fakultas Ekonomi dan Bisnis"
-                                                        {{ $user->getTableDatabase()->fakultas == 'Fakultas Ekonomi' ? 'selected' : '' }}>
-                                                        Fakultas Ekonomi dan Bisnis</option>
-                                                    <option value="Fakultas Teknologi Informasi"
-                                                        {{ $user->getTableDatabase()->fakultas == 'Fakultas Teknologi Informasi' ? 'selected' : '' }}>
-                                                        Fakultas Teknologi Informasi</option>
-                                                    <option value="Fakultas Hukum"
-                                                        {{ $user->getTableDatabase()->fakultas == 'Fakultas Hukum' ? 'selected' : '' }}>
-                                                        Fakultas Hukum</option>
+                                                    <option value="Fakultas Ekonomi" 
+                                                    {{ $user->getTableDatabase()->fakultas == 'Fakultas Ekonomi' ? 'selected' : '' }}>Fakultas Ekonomi</option>
+                                                    <option value="Fakultas Hukum" 
+                                                    {{ $user->getTableDatabase()->fakultas == 'Fakultas Hukum' ? 'selected' : '' }}>Fakultas Hukum</option>
+                                                    <option value="Fakultas Keguruan dan Ilmu Pendidikan" 
+                                                    {{ $user->getTableDatabase()->fakultas == 'Fakultas Keguruan dan Ilmu Pendidikan' ? 'selected' : '' }}>Fakultas Keguruan dan Ilmu Pendidikan</option>
+                                                    <option value="Fakultas Pertanian" 
+                                                    {{ $user->getTableDatabase()->fakultas == 'Fakultas Pertanian' ? 'selected' : '' }}>Fakultas Pertanian</option>
+                                                    <option value="Fakultas Teknik" 
+                                                    {{ $user->getTableDatabase()->fakultas == 'Fakultas Teknik' ? 'selected' : '' }}>Fakultas Teknik</option>
+                                                    <option value="Fakultas Teknologi Informasi" 
+                                                    {{ $user->getTableDatabase()->fakultas == 'Fakultas Teknologi Informasi' ? 'selected' : '' }}>Fakultas Teknologi Informasi</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -258,30 +252,34 @@
                                                 <label for="prodi" class="form-label"><strong>Prodi</strong></label>
                                                 <select class="form-control" id="prodi" name="prodi">
                                                     <option disabled selected>Pilih Program Studi</option>
-                                                    <option value="Prodi Kedokteran"
-                                                        {{ $user->getTableDatabase()->prodi == 'Prodi Kedokteran' ? 'selected' : '' }}>
-                                                        Prodi Kedokteran</option>
-                                                    <option value="Prodi Kedokteran Gigi"
-                                                        {{ $user->getTableDatabase()->prodi == 'Prodi Kedokteran Gigi' ? 'selected' : '' }}>
-                                                        Prodi Kedokteran Gigi</option>
-                                                    <option value="Prodi Psikologi"
-                                                        {{ $user->getTableDatabase()->prodi == 'Prodi Psikologi' ? 'selected' : '' }}>
-                                                        Prodi Psikologi</option>
-                                                    <option value="Prodi Akutansi"
-                                                        {{ $user->getTableDatabase()->prodi == 'Prodi Akutansi' ? 'selected' : '' }}>
-                                                        Prodi Akutansi</option>
-                                                    <option value="Prodi Manajemen"
-                                                        {{ $user->getTableDatabase()->prodi == 'Prodi Manajemen' ? 'selected' : '' }}>
-                                                        Prodi Manajemen</option>
-                                                    <option value="Prodi Teknik Informatika"
-                                                        {{ $user->getTableDatabase()->prodi == 'Prodi Teknik Informatika' ? 'selected' : '' }}>
-                                                        Prodi Teknik Informatika</option>
-                                                    <option value="Prodi Perpustakaan Sains Informasi"
-                                                        {{ $user->getTableDatabase()->prodi == 'Prodi Perpustakaan Sains Informasi' ? 'selected' : '' }}>
-                                                        Prodi Perpustakaan Sains Informasi</option>
-                                                    <option value="Prodi Hukum"
-                                                        {{ $user->getTableDatabase()->prodi == 'Prodi Hukum' ? 'selected' : '' }}>
-                                                        Prodi Hukum</option>
+                                                    <option value="Ekonomi Pembangunan" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Ekonomi Pembangunan' ? 'selected' : '' }}>Ekonomi Pembangunan</option>
+                                                    <option value="Manajemen" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Manajemen' ? 'selected' : '' }}>Manajemen</option>
+                                                    <option value="Ilmu Hukum" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Ilmu Hukum' ? 'selected' : '' }}>Ilmu Hukum</option>
+                                                    <option value="Pendidikan Bahasa Indonesia" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Pendidikan Bahasa Indonesia' ? 'selected' : '' }}>Pendidikan Bahasa Indonesia</option>
+                                                    <option value="Pendidikan Bahasa Inggris" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Pendidikan Bahasa Inggris' ? 'selected' : '' }}>Pendidikan Bahasa Inggris</option>
+                                                    <option value="Pendidikan Ekonomi" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Pendidikan Ekonomi' ? 'selected' : '' }}>Pendidikan Ekonomi</option>
+                                                    <option value="Pendidikan Matematika" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Pendidikan Matematika' ? 'selected' : '' }}>Pendidikan Matematika</option>
+                                                    <option value="Pendidikan Sejarah" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Pendidikan Sejarah' ? 'selected' : '' }}>Pendidikan Sejarah</option>
+                                                    <option value="Agribisnis" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Agribisnis' ? 'selected' : '' }}>Agribisnis</option>
+                                                    <option value="Agroteknologi" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Agroteknologi' ? 'selected' : '' }}>Agroteknologi</option>
+                                                    <option value="Budidaya Perairan" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Budidaya Perairan' ? 'selected' : '' }}>Budidaya Perairan</option>
+                                                    <option value="Teknik Listrik" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Teknik Listrik' ? 'selected' : '' }}>Teknik Listrik</option>
+                                                    <option value="Teknik Lingkungan" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Teknik Lingkungan' ? 'selected' : '' }}>Teknik Lingkungan</option>
+                                                    <option value="Teknik Sipil" 
+                                                    {{ $user->getTableDatabase()->prodi == 'Teknik Sipil' ? 'selected' : '' }}>Teknik Sipil</option>
                                                 </select>
                                             </div>
                                         </div>

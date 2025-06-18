@@ -285,33 +285,29 @@ class AdminController extends Controller
     public function viewCreateDataKelompok()
     {
         $dpls = Dpl::where('status', 'belum terdaftar')->get();
-        $mahasiswaFK = Mahasiswa::where('status', 'diproses')
-            ->where('fakultas', 'Fakultas Kedokteran')
-            ->get();
-        $mahasiswaFKG = Mahasiswa::where('status', 'diproses')
-            ->where('fakultas', 'Fakultas Kedokteran Gigi')
-            ->get();
-        $mahasiswaPsikologi = Mahasiswa::where('status', 'diproses')
-            ->where('fakultas', 'Fakultas Psikologi')
-            ->get();
-        $mahasiswaFEB = Mahasiswa::where('status', 'diproses')
-            ->where('fakultas', 'Fakultas Ekonomi dan Bisnis')
-            ->get();
-        $mahasiswaFTI = Mahasiswa::where('status', 'diproses')
-            ->where('fakultas', 'Fakultas Teknologi Informasi')
-            ->get();
-        $mahasiswaFH = Mahasiswa::where('status', 'diproses')
+        $mahasiswaHukum = Mahasiswa::where('status', 'diproses')
             ->where('fakultas', 'Fakultas Hukum')
+            ->get();
+        $mahasiswaEkonomi = Mahasiswa::where('status', 'diproses')
+            ->where('fakultas', 'Fakultas Ekonomi')
+            ->get();
+        $mahasiswaKeguruandanIlmuPendidikan = Mahasiswa::where('status', 'diproses')
+            ->where('fakultas', 'Fakultas Keguruan dan Ilmu Pendidikan')
+            ->get();
+        $mahasiswaPertanian = Mahasiswa::where('status', 'diproses')
+            ->where('fakultas', 'Fakultas Pertanian')
+            ->get();
+        $mahasiswaTeknik = Mahasiswa::where('status', 'diproses')
+            ->where('fakultas', 'Fakultas Teknik')
             ->get();
 
         return view('informasi.admin.kelompok.buat-kelompok', compact(
             'dpls',
-            'mahasiswaFK',
-            'mahasiswaFKG',
-            'mahasiswaPsikologi',
-            'mahasiswaFEB',
-            'mahasiswaFTI',
-            'mahasiswaFH',
+            'mahasiswaHukum',
+            'mahasiswaEkonomi',
+            'mahasiswaKeguruandanIlmuPendidikan',
+            'mahasiswaPertanian',
+            'mahasiswaTeknik',
         ));
     }
 
