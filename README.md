@@ -20,7 +20,7 @@ mulai dari pengisian data hingga proses verifikasi.
 Class diagram menunjukkan struktur kelas dan relasi antar kelas
 yang digunakan dalam pengembangan sistem.
 
-![Class Diagram](assets/CLASS%20DIAGRAM)
+![Class Diagram](assets/CLASS%20DIAGRAM.png)
 
 ## Application Preview
 
